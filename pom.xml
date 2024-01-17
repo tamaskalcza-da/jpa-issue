@@ -13,28 +13,55 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <jakarta.persistence.api.version>3.1.0</jakarta.persistence.api.version>
+    <postgresql.version>42.5.4</postgresql.version>
+    <hibernate.version>6.3.2.Final</hibernate.version>
+    <hypersistence.utils.version>3.7.0</hypersistence.utils.version>
+    <jackson.databind.version>2.16.1</jackson.databind.version>
+    <junit.version>5.10.1</junit.version>
+    <assertj.core.version>3.25.1</assertj.core.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>jakarta.persistence</groupId>
       <artifactId>jakarta.persistence-api</artifactId>
-      <version>3.1.0</version>
+      <version>${jakarta.persistence.api.version}</version>
     </dependency>
     <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
-      <version>42.5.4</version>
+      <version>${postgresql.version}</version>
     </dependency>
     <dependency>
       <groupId>org.hibernate.orm</groupId>
       <artifactId>hibernate-core</artifactId>
-      <version>6.3.2.Final</version>
+      <version>${hibernate.version}</version>
     </dependency>
     <dependency>
       <groupId>io.hypersistence</groupId>
       <artifactId>hypersistence-utils-hibernate-63</artifactId>
-      <version>3.7.0</version>
+      <version>${hypersistence.utils.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson.databind.version}</version>
+    </dependency>
+
+    <!-- Test Dependencies -->
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.assertj</groupId>
+      <artifactId>assertj-core</artifactId>
+      <version>${assertj.core.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

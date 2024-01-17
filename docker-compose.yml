@@ -1,0 +1,13 @@
+services:
+  database:
+    image: ${POSTGRES_IMAGE:-postgres:14.7}
+    platform: ${POSTGRES_IMAGE_PLATFORM:-linux/amd64}
+    environment:
+      - POSTGRES_USER=demoAdmin
+      - POSTGRES_PASSWORD=demoPassword
+      - POSTGRES_DB=demo
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: pg_isready -U "admin" -d "demo"
+      interval: 1s
